@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Productions{% endblock %}
+
+{% block body %}
+    <h1>Create new Productions</h1>
+
+    {{ include('productions/_form.html.twig') }}
+    <h3>Produits</h3>
+        <ul>
+            {% for prod in form.produit %}
+                <li>{{ form_row(prod.reference) }}</li>
+            {% endfor %}
+        </ul>
+    <a href="{{ path('app_productions_index') }}">back to list</a>
+{% endblock %}
